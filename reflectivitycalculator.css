@@ -1,0 +1,16 @@
+    body { font-family: sans-serif; margin: 20px; }
+    textarea { width: 200px; height: 180px; font-family: monospace; }
+    pre { background: #f4f4f4; padding: 10px; width: 300px; }
+    .range-input { width: 40px; text-align: right; }
+    #multilayerTd { width: 250px; }
+    #resultData { width:450px; height: 120px; }
+    #buttonDiv { width: 400px; text-align: right; }
+    #calcRefButton { width: 250px; height: 50px; margin: 15px; font-size:18px; }
+    #chart-container {  background-color: #ffffff;
+      position: fixed;      top: 100px;     right: 50px;
+      width: 500px;   max-width: 600px;   height: 500px;
+      z-index: 1000;     /* always top */ }
+    .logcheckbox { margin-left: 50px; margin-right: 20px; }
+    #signature {  background-color: #ffffff;
+      position: fixed;      top:  50px;    right: 50px;
+      width: 300px;   max-width: 300px;   height: 50px; }

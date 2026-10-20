@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://unpkg.com https://cdn.jsdelivr.net; style-src 'self' https://unpkg.com https://cdn.jsdelivr.net;">
+  <link rel="stylesheet" href="reflectivitycalculator.css">
+  <!-- math.js and chart.js -->
+  <script src="https://unpkg.com/mathjs@15.2.0/lib/browser/math.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- reflectivity.js -->
+  <script src="reflectivity.js"></script>
+  
+  <title>Neutron Reflectivity Calculator</title>
+</head>
+
+<body>
+  <h1>Neutron Reflectivity Calculator</h1>
+  <!-- Multilayer data and potential data area -->
+  <div>
+    <table class="multilayer-table">
+    <tr><th colspan="2" style="text-align: left;">Multilayer Data
+    <tr>
+    <td id="multilayerTd">Material and thickness(nm)<br>
+      <textarea id="multilayerData">Ni    10
+Ti    10
+Ni    10
+Ti    10
+Ni    10
+Ti    10
+Ni    10
+Ti    10
+Ni    10
+Ti    10</textarea>
+    <td>Potential(neV) for materials<br>
+      <textarea id="potentialData">Ni   240
+Ti   -50
+Si    54
+SiO2  91</textarea>
+    </table>
+  </div>
+  <!-- Type and range of horizontal axis (scan parameter) input area -->
+  <div>
+    <table class="input-range-group">
+    <tr><th colspan="4" style="text-align: left;">Horizontal axis (scan parameter)
+    <tr><td><label><input type="radio" name="xaxis" value="q" checked> q : </label>
+    <td><input type="text" class="range-input" id="q_min" value="0.1" placeholder="0.1 nm-1"> nm<sup>-1</sup>
+    <td> -- <input type="text" class="range-input" id="q_max" value="0.6" placeholder="0.6 nm-1"> nm<sup>-1</sup>
+    <td> 
+    <tr><td><label><input type="radio" name="xaxis" value="angle"> theta : </label>
+    <td><input type="text" class="range-input" id="theta_min" value="0.2" placeholder="0.2"> deg
+    <td> -- <input type="text" class="range-input" id="theta_max" value="2.2" placeholder="2.2"> deg
+    <td> for lambda = <input type="text" class="range-input" id="theta_lambda" value="0.18" placeholder="0.18"> nm
+    <tr><td><label><input type="radio" name="xaxis" value="wavelength"> lambda : </label>
+    <td><input type="text" class="range-input" id="lambda_min" value="0.2" placeholder="0.2"> nm
+    <td> -- <input type="text" class="range-input" id="lambda_max" value="1.2" placeholder="1.2"> nm
+    <td> for theta = <input type="text" class="range-input" id="lambda_deg" value="0.5" placeholder="0.5"> deg
+    </table>   
+  </div>
+  <!-- Caluclate button -->
+  <div id="buttonDiv">
+    <button id="calcRefButton">Calculate Reflectivity</button>
+  </div>
+  <!-- Result Textarea -->
+  <div>
+    <table><tr><th id="resultTitle" style="text-align: left;">Reslut
+    <tr><td><textarea id="resultData"></textarea></table>
+  </div>  
+  <!-- Plot canvas for Chart.js -->
+  <div id="chart-container">
+    <canvas id="myChart"></canvas><br>
+    <div>
+    <label class="logcheckbox"><input type="checkbox" id="logyToggle"> Logscale Y</label>
+    <label class="logcheckbox"><input type="checkbox" id="logxToggle"> Logscale X</label>
+    </div>
+  </div>
+  <!-- Signature -->
+  <div id="signature">Oct. 20, 2026, M. Kitaguchi</div>
+
+</body>
+</html>
