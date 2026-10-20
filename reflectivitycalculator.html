@@ -2,13 +2,10 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://unpkg.com https://cdn.jsdelivr.net; style-src 'self' https://unpkg.com https://cdn.jsdelivr.net;">
   <link rel="stylesheet" href="reflectivitycalculator.css">
   <!-- math.js and chart.js -->
   <script src="https://unpkg.com/mathjs@15.2.0/lib/browser/math.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <!-- reflectivity.js -->
-  <script src="reflectivity.js"></script>
   
   <title>Neutron Reflectivity Calculator</title>
 </head>
@@ -18,7 +15,7 @@
   <!-- Multilayer data and potential data area -->
   <div>
     <table class="multilayer-table">
-    <tr><th colspan="2" style="text-align: left;">Multilayer Data
+    <tr><th colspan="2" class="thleft">Multilayer Data
     <tr>
     <td id="multilayerTd">Material and thickness(nm)<br>
       <textarea id="multilayerData">Ni    10
@@ -41,7 +38,7 @@ SiO2  91</textarea>
   <!-- Type and range of horizontal axis (scan parameter) input area -->
   <div>
     <table class="input-range-group">
-    <tr><th colspan="4" style="text-align: left;">Horizontal axis (scan parameter)
+    <tr><th colspan="4" class="thleft">Horizontal axis (scan parameter)
     <tr><td><label><input type="radio" name="xaxis" value="q" checked> q : </label>
     <td><input type="text" class="range-input" id="q_min" value="0.1" placeholder="0.1 nm-1"> nm<sup>-1</sup>
     <td> -- <input type="text" class="range-input" id="q_max" value="0.6" placeholder="0.6 nm-1"> nm<sup>-1</sup>
@@ -62,7 +59,7 @@ SiO2  91</textarea>
   </div>
   <!-- Result Textarea -->
   <div>
-    <table><tr><th id="resultTitle" style="text-align: left;">Reslut
+    <table><tr><th id="resultTitle" class="thleft">Reslut
     <tr><td><textarea id="resultData"></textarea></table>
   </div>  
   <!-- Plot canvas for Chart.js -->
@@ -75,6 +72,9 @@ SiO2  91</textarea>
   </div>
   <!-- Signature -->
   <div id="signature">Oct. 20, 2026, M. Kitaguchi</div>
+
+  <!-- reflectivity.js -->
+  <script src="reflectivity.js"></script>
 
 </body>
 </html>
