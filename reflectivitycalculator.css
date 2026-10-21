@@ -7,11 +7,19 @@ pre { background: #f4f4f4; padding: 10px; width: 300px; }
 #buttonDiv { width: 400px; text-align: right; }
 #calcRefButton { width: 250px; height: 50px; margin: 15px; font-size:18px; }
 #chart-container {  background-color: #ffffff;
-      position: fixed;      top: 100px;     right: 50px;
-      width: 500px;   max-width: 600px;   height: 500px;
-      z-index: 1000;     /* always top */ }
-.logcheckbox { margin-left: 50px; margin-right: 20px; }
-#signature {  background-color: #ffffff;
-      position: fixed;      top:  50px;    right: 50px;
-      width: 300px;   max-width: 300px;   height: 50px; }
+      margin: 10px 50px 20px 20px;
+      width: 500px;   max-width: 600px;  height: 500px;}
+.logcheckbox { margin: 0px 20px 0px 70px; }
+#signature {  background-color: #ffffff;  margin: 20px 50px 0px 50px;
+      width: 300px;   max-width: 300px;  height: 50px; }
 .thleft { text-align: left; }
+#logcheck-container { margin: 0px 0px 80px 0px; }
+.flex-container {  display: flex;  flex-direction: column; }
+@media (min-width: 1100px) {
+  .flex-container {
+    width: 1100px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
